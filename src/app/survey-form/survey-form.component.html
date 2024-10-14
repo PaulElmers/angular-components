@@ -1,0 +1,8 @@
+<form [formGroup]="surveyForm" (ngSubmit)="onSubmit()">
+    <div *ngFor="let question of questions; let i = index">
+      <label>{{ question }}</label>
+      <input formControlName="answers" type="text" />
+    </div>
+    <button type="submit" [disabled]="surveyForm.invalid">Submit</button>
+  </form>
+  

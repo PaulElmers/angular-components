@@ -1,0 +1,10 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <label>Avatar</label>
+    <input type="file" (change)="onAvatarChange($event)" />
+    <label>Name</label>
+    <input formControlName="name" type="text" />
+    <label>Email</label>
+    <input formControlName="email" type="email" />
+    <button type="submit" [disabled]="profileForm.invalid">Update</button>
+  </form>
+  

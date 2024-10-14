@@ -1,0 +1,7 @@
+<form [formGroup]="selectForm" (ngSubmit)="onSelectionChange()">
+    <select formControlName="option">
+      <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+    </select>
+    <button type="submit" [disabled]="selectForm.invalid">Select</button>
+  </form>
+  

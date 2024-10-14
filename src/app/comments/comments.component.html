@@ -1,0 +1,9 @@
+<ul>
+    <li *ngFor="let comment of comments">{{ comment }}</li>
+  </ul>
+  
+  <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+    <textarea formControlName="text"></textarea>
+    <button type="submit" [disabled]="commentForm.invalid">Add Comment</button>
+  </form>
+  

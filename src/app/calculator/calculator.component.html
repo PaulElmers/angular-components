@@ -1,0 +1,6 @@
+<form [formGroup]="calcForm" (ngSubmit)="onSubmit()">
+    <input formControlName="value1" type="number" />
+    <input formControlName="value2" type="number" />
+    <button type="submit" [disabled]="calcForm.invalid">Calculate</button>
+  </form>
+  

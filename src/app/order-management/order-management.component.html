@@ -1,0 +1,12 @@
+<div *ngFor="let order of orders">
+    <h3>Order #{{ order.id }}</h3>
+    <form [formGroup]="orderForm" (ngSubmit)="onStatusChange(order.id)">
+      <select formControlName="status">
+        <option value="pending">Pending</option>
+        <option value="shipped">Shipped</option>
+        <option value="delivered">Delivered</option>
+      </select>
+      <button type="submit">Update</button>
+    </form>
+  </div>
+  

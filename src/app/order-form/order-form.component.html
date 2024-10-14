@@ -1,0 +1,18 @@
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+    <label>Product</label>
+    <select formControlName="product">
+      <option *ngFor="let product of products" [value]="product">{{ product }}</option>
+    </select>
+  
+    <label>Quantity</label>
+    <input formControlName="quantity" type="number" />
+  
+    <label>Delivery Method</label>
+    <select formControlName="delivery">
+      <option value="standard">Standard</option>
+      <option value="express">Express</option>
+    </select>
+  
+    <button type="submit" [disabled]="orderForm.invalid">Submit Order</button>
+  </form>
+  

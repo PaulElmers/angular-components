@@ -1,0 +1,19 @@
+<div class="tabs">
+    <ul>
+      <li *ngFor="let tab of tabConfig; let i = index" [class.active]="i === activeTabIndex" (click)="switchTab(i)">
+        {{ tab.label }}
+      </li>
+    </ul>
+  </div>
+  
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div *ngFor="let tab of tabConfig; let i = index" [hidden]="i !== activeTabIndex">
+      <div *ngFor="let field of tab.fields">
+        <label>{{ field.label }}</label>
+        <input [formControlName]="field.name" [type]="field.type" />
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="form.invalid">Submit</button>
+  </form>
+  

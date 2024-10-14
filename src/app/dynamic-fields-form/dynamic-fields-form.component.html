@@ -1,0 +1,12 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div *ngFor="let field of fieldConfig">
+      <label>{{ field.label }}</label>
+      <input [type]="field.type" [formControlName]="field.name" />
+      <div *ngIf="form.get(field.name)?.touched && form.get(field.name)?.invalid">
+        {{ field.label }} is required.
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="form.invalid">Submit</button>
+  </form>
+  

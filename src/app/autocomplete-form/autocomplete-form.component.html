@@ -1,0 +1,10 @@
+<form [formGroup]="searchForm">
+    <input formControlName="searchTerm" type="text" placeholder="Start typing..." />
+  </form>
+  
+  <ul *ngIf="suggestions.length">
+    <li *ngFor="let suggestion of suggestions" (click)="onSuggestionClick(suggestion)">
+      {{ suggestion }}
+    </li>
+  </ul>
+  
